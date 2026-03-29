@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운터 앱</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">카운터</h1>
+
+        <!-- 카운트 표시 -->
+        <div class="text-6xl font-bold text-center text-blue-600 mb-8" id="count">
+            0
+        </div>
+
+        <!-- 버튼 그룹 -->
+        <div class="flex gap-4 mb-4">
+            <button
+                id="decreaseBtn"
+                class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition duration-200"
+            >
+                -1
+            </button>
+            <button
+                id="increaseBtn"
+                class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition duration-200"
+            >
+                +1
+            </button>
+        </div>
+
+        <!-- 리셋 버튼 -->
+        <button
+            id="resetBtn"
+            class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-lg transition duration-200"
+        >
+            리셋
+        </button>
+    </div>
+
+    <script>
+        // 카운트 상태 관리
+        let count = 0;
+        const countDisplay = document.getElementById('count');
+        const increaseBtn = document.getElementById('increaseBtn');
+        const decreaseBtn = document.getElementById('decreaseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        // 카운트 업데이트 함수
+        function updateCount() {
+            countDisplay.textContent = count;
+        }
+
+        // 증가 버튼 클릭
+        increaseBtn.addEventListener('click', () => {
+            count++;
+            updateCount();
+        });
+
+        // 감소 버튼 클릭
+        decreaseBtn.addEventListener('click', () => {
+            count--;
+            updateCount();
+        });
+
+        // 리셋 버튼 클릭
+        resetBtn.addEventListener('click', () => {
+            count = 0;
+            updateCount();
+        });
+    </script>
+</body>
+</html>

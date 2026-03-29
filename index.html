@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="개발자 포트폴리오 - 경력, 기술, 프로젝트">
+    <title>개발자 포트폴리오</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwindConfig = {
+            darkMode: 'class'
+        }
+    </script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300" style="font-family: 'Noto Sans KR', sans-serif;">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white dark:bg-slate-800 shadow-md z-50 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Portfolio</a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex gap-8">
+                <li><a href="#home" class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition">홈</a></li>
+                <li><a href="#about" class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition">소개</a></li>
+                <li><a href="#experience" class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition">경력</a></li>
+                <li><a href="#skills" class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition">기술</a></li>
+                <li><a href="#projects" class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition">프로젝트</a></li>
+                <li><a href="#contact" class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition">연락처</a></li>
+            </ul>
+
+            <!-- Dark Mode Toggle -->
+            <button id="darkModeToggle" class="hidden md:block p-2 rounded-lg bg-slate-100 dark:bg-slate-700 transition">
+                <i class="fas fa-sun text-yellow-500"></i>
+            </button>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center gap-4">
+                <button id="darkModeToggleMobile" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 transition">
+                    <i class="fas fa-sun text-yellow-500"></i>
+                </button>
+                <button id="menuToggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 transition">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700">
+            <ul class="px-4 py-4 space-y-4">
+                <li><a href="#home" class="nav-link block hover:text-blue-600 dark:hover:text-blue-400 transition">홈</a></li>
+                <li><a href="#about" class="nav-link block hover:text-blue-600 dark:hover:text-blue-400 transition">소개</a></li>
+                <li><a href="#experience" class="nav-link block hover:text-blue-600 dark:hover:text-blue-400 transition">경력</a></li>
+                <li><a href="#skills" class="nav-link block hover:text-blue-600 dark:hover:text-blue-400 transition">기술</a></li>
+                <li><a href="#projects" class="nav-link block hover:text-blue-600 dark:hover:text-blue-400 transition">프로젝트</a></li>
+                <li><a href="#contact" class="nav-link block hover:text-blue-600 dark:hover:text-blue-400 transition">연락처</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+
+        <!-- Header/Profile Section -->
+        <section id="home" class="min-h-screen bg-gradient-to-b from-blue-50 dark:from-slate-800 to-white dark:to-slate-900 flex items-center justify-center px-4 py-20">
+            <div class="max-w-xl text-center">
+                <div class="mb-8">
+                    <img src="https://picsum.photos/160/160" alt="프로필 사진" class="w-40 h-40 rounded-full mx-auto object-cover border-4 border-blue-600 dark:border-blue-400 shadow-lg">
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold text-blue-600 dark:text-blue-400 mb-4">홍길동</h1>
+                <p class="text-2xl md:text-3xl font-semibold text-slate-700 dark:text-slate-300 mb-6">풀스택 웹 개발자</p>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                    사용자 중심의 웹 애플리케이션을 개발하는 개발자입니다. 프론트엔드와 백엔드 모두 경험이 있으며, 깔끔한 코드와 최적화된 성능을 추구합니다.
+                </p>
+                <div class="flex gap-4 justify-center flex-wrap">
+                    <a href="#contact" class="bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition transform hover:scale-105">연락하기</a>
+                    <a href="#projects" class="border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 px-8 py-3 rounded-lg font-semibold transition">프로젝트 보기</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-4 bg-white dark:bg-slate-900">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-12 text-center">소개</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">핵심 역량</h3>
+                        <ul class="space-y-3 text-slate-700 dark:text-slate-300">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1"></i>
+                                <span>현대적인 웹 기술 활용 및 구현</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1"></i>
+                                <span>반응형 UI/UX 디자인</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1"></i>
+                                <span>데이터베이스 설계 및 최적화</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1"></i>
+                                <span>팀 협업 및 커뮤니케이션</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1"></i>
+                                <span>문제 해결 및 디버깅</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">자기소개</h3>
+                        <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                            저는 5년 이상의 웹 개발 경험을 가진 개발자입니다. JavaScript, React, Node.js를 주로 사용하며, 다양한 프로젝트에서 성공적인 웹 애플리케이션을 구축했습니다.
+                        </p>
+                        <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+                            사용자의 요구사항을 이해하고, 효율적이고 유지보수하기 쉬운 코드를 작성하는 것을 중요하게 생각합니다. 새로운 기술 학습과 자기계발을 즐기며, 팀의 성장을 함께 추구합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 px-4 bg-slate-50 dark:bg-slate-800">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-12 text-center">경력</h2>
+                <div class="space-y-8">
+                    <!-- Experience 1 -->
+                    <div class="bg-white dark:bg-slate-700 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">시니어 웹 개발자</h3>
+                            <span class="text-sm text-blue-600 dark:text-blue-400 font-semibold">2022 - 현재</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">Tech Company</p>
+                        <p class="text-slate-700 dark:text-slate-300 mb-3">
+                            React 기반의 대규모 웹 애플리케이션 개발 및 유지보수. 팀 리드로 신입 개발자 교육 및 코드 리뷰 담당.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">React</span>
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">TypeScript</span>
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">Node.js</span>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="bg-white dark:bg-slate-700 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">웹 개발자</h3>
+                            <span class="text-sm text-blue-600 dark:text-blue-400 font-semibold">2019 - 2022</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3">Start-up</p>
+                        <p class="text-slate-700 dark:text-slate-300 mb-3">
+                            풀스택 웹 개발로 MVP 구현 및 프로덕션 배포. 사용자 피드백을 기반으로 빠르게 기능 개선.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">Vue.js</span>
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">Express</span>
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 px-4 bg-white dark:bg-slate-900">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-12 text-center">학력</h2>
+                <div class="space-y-6">
+                    <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">컴퓨터공학 학사</h3>
+                        <p class="text-slate-600 dark:text-slate-400 font-semibold">대학교</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">2015 - 2019 졸업</p>
+                        <p class="text-slate-700 dark:text-slate-300 mt-3">평점 3.8/4.0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-4 bg-slate-50 dark:bg-slate-800">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-12 text-center">기술 스택</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Frontend</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-lg font-semibold">HTML5</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-lg font-semibold">CSS3</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-lg font-semibold">JavaScript</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-lg font-semibold">React</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-lg font-semibold">Vue.js</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-lg font-semibold">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Backend</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-4 py-2 rounded-lg font-semibold">Node.js</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-4 py-2 rounded-lg font-semibold">Express</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-4 py-2 rounded-lg font-semibold">Python</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-4 py-2 rounded-lg font-semibold">Django</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-4 py-2 rounded-lg font-semibold">REST API</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Tools & DB</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-lg font-semibold">Git</span>
+                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-lg font-semibold">MongoDB</span>
+                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-lg font-semibold">PostgreSQL</span>
+                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-lg font-semibold">Docker</span>
+                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-lg font-semibold">AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-4 bg-white dark:bg-slate-900">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-12 text-center">프로젝트</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden hover:shadow-lg transition">
+                        <div class="h-40 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
+                            <i class="fas fa-code text-white text-5xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">전자상거래 플랫폼</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-4">React와 Node.js로 구현한 풀스택 전자상거래 솔루션. 실시간 결제, 주문 관리, 사용자 대시보드 포함.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">React</span>
+                                <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">Node.js</span>
+                                <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">MongoDB</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold text-sm">
+                                    <i class="fas fa-link"></i> 링크
+                                </a>
+                                <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-semibold text-sm">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden hover:shadow-lg transition">
+                        <div class="h-40 bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center">
+                            <i class="fas fa-tasks text-white text-5xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">프로젝트 관리 앱</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-4">팀 협업을 위한 프로젝트 관리 도구. 실시간 동기화, 파일 공유, 댓글 기능.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-3 py-1 rounded-full">Vue.js</span>
+                                <span class="text-xs bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-3 py-1 rounded-full">Firebase</span>
+                                <span class="text-xs bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-3 py-1 rounded-full">WebSocket</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 font-semibold text-sm">
+                                    <i class="fas fa-link"></i> 링크
+                                </a>
+                                <a href="#" class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 font-semibold text-sm">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact/SNS Section -->
+        <section id="contact" class="py-20 px-4 bg-slate-50 dark:bg-slate-800">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-12 text-center">연락처</h2>
+
+                <!-- Contact Info Cards -->
+                <div class="grid md:grid-cols-2 gap-6 mb-12">
+                    <!-- Email -->
+                    <a href="mailto:email@example.com" class="bg-white dark:bg-slate-700 p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition transform">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-blue-600 dark:text-blue-400 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white">이메일</h3>
+                                <p class="text-slate-600 dark:text-slate-400">email@example.com</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Phone -->
+                    <a href="tel:+821012345678" class="bg-white dark:bg-slate-700 p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition transform">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone text-green-600 dark:text-green-400 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white">전화</h3>
+                                <p class="text-slate-600 dark:text-slate-400">+82 (0)10-1234-5678</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- SNS Links Section -->
+                <div class="bg-white dark:bg-slate-700 rounded-lg p-8 shadow-md">
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white text-center mb-8">소셜 미디어</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- GitHub -->
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center gap-3 p-6 bg-slate-50 dark:bg-slate-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-500 transition">
+                            <i class="fab fa-github text-3xl text-slate-900 dark:text-white"></i>
+                            <span class="font-semibold text-slate-900 dark:text-white">GitHub</span>
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center gap-3 p-6 bg-red-50 dark:bg-red-900/30 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/50 transition">
+                            <i class="fab fa-youtube text-3xl text-red-600 dark:text-red-400"></i>
+                            <span class="font-semibold text-slate-900 dark:text-white">YouTube</span>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center gap-3 p-6 bg-pink-50 dark:bg-pink-900/30 rounded-lg hover:bg-pink-100 dark:hover:bg-pink-900/50 transition">
+                            <i class="fab fa-instagram text-3xl text-pink-600 dark:text-pink-400"></i>
+                            <span class="font-semibold text-slate-900 dark:text-white">Instagram</span>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center gap-3 p-6 bg-blue-50 dark:bg-blue-900/30 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/50 transition">
+                            <i class="fab fa-linkedin text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <span class="font-semibold text-slate-900 dark:text-white">LinkedIn</span>
+                        </a>
+
+                        <!-- Twitter -->
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center gap-3 p-6 bg-sky-50 dark:bg-sky-900/30 rounded-lg hover:bg-sky-100 dark:hover:bg-sky-900/50 transition">
+                            <i class="fab fa-twitter text-3xl text-sky-500 dark:text-sky-400"></i>
+                            <span class="font-semibold text-slate-900 dark:text-white">Twitter</span>
+                        </a>
+
+                        <!-- Blog -->
+                        <a href="https://blog.example.com" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center gap-3 p-6 bg-orange-50 dark:bg-orange-900/30 rounded-lg hover:bg-orange-100 dark:hover:bg-orange-900/50 transition">
+                            <i class="fas fa-blog text-3xl text-orange-600 dark:text-orange-400"></i>
+                            <span class="font-semibold text-slate-900 dark:text-white">블로그</span>
+                        </a>
+
+                        <!-- Portfolio Website -->
+                        <a href="https://portfolio.example.com" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center gap-3 p-6 bg-indigo-50 dark:bg-indigo-900/30 rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-900/50 transition">
+                            <i class="fas fa-globe text-3xl text-indigo-600 dark:text-indigo-400"></i>
+                            <span class="font-semibold text-slate-900 dark:text-white">웹사이트</span>
+                        </a>
+
+                        <!-- Discord -->
+                        <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center gap-3 p-6 bg-purple-50 dark:bg-purple-900/30 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-900/50 transition">
+                            <i class="fab fa-discord text-3xl text-purple-600 dark:text-purple-400"></i>
+                            <span class="font-semibold text-slate-900 dark:text-white">Discord</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 dark:bg-slate-950 text-slate-300 py-8 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="mb-3">© 2024 홍길동. All rights reserved.</p>
+            <p class="text-sm text-slate-500">Designed & Built by <a href="#" class="text-blue-400 hover:text-blue-300">홍길동</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

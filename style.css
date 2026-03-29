@@ -1,0 +1,183 @@
+/* 커스텀 CSS - Tailwind로 표현 불가한 스타일 */
+
+/* 부드러운 스크롤 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 스크롤 애니메이션 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* 활성 네비게이션 링크 스타일 */
+.nav-link.active {
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 4px;
+}
+
+.dark .nav-link.active {
+    color: #60a5fa;
+    border-bottom-color: #60a5fa;
+}
+
+/* 섹션 교차 관찰자 애니메이션 */
+.section-animate {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.section-animate.in-view {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* 프로필 이미지 호버 효과 */
+img[alt="프로필 사진"] {
+    transition: transform 0.3s ease;
+}
+
+img[alt="프로필 사진"]:hover {
+    transform: scale(1.05);
+}
+
+/* 카드 호버 효과 향상 */
+.bg-white[class*="dark:bg-slate"],
+.bg-slate-50[class*="dark:bg-slate"] {
+    transition: all 0.3s ease;
+}
+
+/* 스킬 배지 애니메이션 */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.skill-badge {
+    animation: slideInRight 0.5s ease-out;
+}
+
+/* 다크모드 전환 애니메이션 */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 버튼 활성화 상태 */
+button:active {
+    transform: scale(0.98);
+}
+
+/* 링크 밑줄 효과 */
+a {
+    transition: all 0.3s ease;
+}
+
+/* 수평선 */
+hr {
+    border-color: rgba(15, 23, 42, 0.1);
+}
+
+.dark hr {
+    border-color: rgba(203, 213, 225, 0.1);
+}
+
+/* 섹션 패딩 기본값 */
+section {
+    scroll-margin-top: 80px;
+}
+
+/* 프로젝트 카드 호버 이미지 효과 */
+.project-image {
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.05);
+}
+
+/* 그래디언트 텍스트 */
+.gradient-text {
+    background: linear-gradient(135deg, #2563eb, #0284c7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dark .gradient-text {
+    background: linear-gradient(135deg, #60a5fa, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 로딩 애니메이션 */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse-custom {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* 박스 그림자 hover 효과 */
+.hover\:shadow-lg:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.dark .hover\:shadow-lg:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* 반응형 디자인 미세 조정 */
+@media (max-width: 640px) {
+    section {
+        scroll-margin-top: 60px;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 1.875rem;
+    }
+}
+
+/* 인쇄 스타일 */
+@media print {
+    nav,
+    footer {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    a {
+        color: #2563eb;
+    }
+}
